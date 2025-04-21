@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cssadvbpoqksl"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/Karya4.cs" id="1_tsw6n"]
+[ext_resource type="Script" path="res://Scripts/Scenes/BtnBack.cs" id="2_x2n6p"]
+[ext_resource type="Texture2D" uid="uid://bb7uvyuqefl7" path="res://Assets/Button_Question2.png" id="3_fv6xb"]
+[ext_resource type="Texture2D" uid="uid://ba3eijbriei2x" path="res://Assets/Button_Question.png" id="4_ftu1o"]
+
+[node name="Karya4" type="Node2D"]
+script = ExtResource("1_tsw6n")
+
+[node name="BtnBack" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+script = ExtResource("2_x2n6p")
+
+[node name="HelpPanel" type="PanelContainer" parent="."]
+offset_left = 487.0
+offset_top = 198.0
+offset_right = 708.0
+offset_bottom = 413.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+text = "Keyboard
+- Tekan 1-4 untuk ganti Motif
+- Tekan + untuk mempercepat animasi
+- Tekan - untuk memperlambar animasi
+- Tekan R untuk reset kecepatan dan posisi
+
+Mouse
+- Wheel Up / Down untuk Zoom in / out
+- Drag untuk  geser motif
+
+# Khusus Motif Gambang:
+- Tekan P untuk berganti mode yaitu Mode normal (hanya animasi dan interaksi biasa) dan Mode bermain (Klik bilah gambang untuk memainkannya dan membuat suara)"
+
+[node name="BtnHelp" type="TextureButton" parent="."]
+offset_left = 661.0
+offset_top = 419.0
+offset_right = 726.0
+offset_bottom = 487.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_fv6xb")
+texture_hover = ExtResource("4_ftu1o")
+
+[connection signal="pressed" from="BtnBack" to="BtnBack" method="_on_BtnBack_pressed"]
+[connection signal="pressed" from="BtnHelp" to="." method="_on_BtnHelp_pressed"]

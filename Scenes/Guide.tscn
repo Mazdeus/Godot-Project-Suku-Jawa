@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1sl3eabh40cq"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/Guide.cs" id="1_omyow"]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-289, 16)
+script = ExtResource("1_omyow")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Informasi Setiap Karya :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CaraKerja" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "1. Karya 1 : Berisi implementasi 5 motif 2D (Batik Kawung, Stupa Candi Borobudur, 
+Gong Sebul, Alat musik Gambang, Pemukul alat musik gambang) yang merupakan 
+kombinasi bentuk-bentuk sederhana
+
+2. Karya 2 : Implementasi animasi dengan transformasi komposit
+     - Batik Kawung : translasi sin‑cos, rotasi lembut & pulsating scale
+     - Stupa Borobudur : rotasi konstan & getaran vertikal  
+     - Gong Sebul : bergerak di lintasan kotak empat sisi dengan shake/rotasi kecil
+     - Gambang : rotasi 90° & animasi dua pemukul
+
+3. Karya 3 : Sama seperti karya 2, hanya motifnya diwarnai menggunakan polygon.
+
+4.Karya 4 : Seperti Karya 3, hanya saja ada penambahan interaksi.
+     a. Keyboard :
+          - +/-/=, num‑pad +/- untuk percepat/perlambat
+          - R untuk reset (posisi & skala)
+          - Khusus untuk gambang, P untuk toggle mode gambang (normal/bermain)
+     b. Mouse :
+          - Wheel untuk zoom
+          - Drag untuk menggeser motif
+          - Klik bilah gambang (mode bermain) memicu sound effect tiap bilah"
+
+[node name="BtnBack" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnBack" to="." method="_on_BtnBack_pressed"]

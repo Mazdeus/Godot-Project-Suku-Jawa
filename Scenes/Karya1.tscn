@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvgwdi5d02qyw"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/Karya1.cs" id="1_gxpmw"]
+[ext_resource type="Script" path="res://Scripts/Scenes/BtnBack.cs" id="2_vnrj5"]
+
+[node name="Karya1" type="Node2D"]
+script = ExtResource("1_gxpmw")
+
+[node name="BtnBack" type="Button" parent="."]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 32.0
+text = "Back"
+script = ExtResource("2_vnrj5")
+
+[node name="Button" type="Button" parent="."]
+offset_top = 35.0
+offset_right = 114.0
+offset_bottom = 66.0
+text = "Batik Kawung"
+
+[node name="Button2" type="Button" parent="."]
+offset_top = 71.0
+offset_right = 141.0
+offset_bottom = 102.0
+text = "Stupa Borobudur"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 105.0
+offset_right = 97.0
+offset_bottom = 136.0
+text = "Gong Sebul"
+
+[node name="Button4" type="Button" parent="."]
+offset_top = 140.0
+offset_right = 83.0
+offset_bottom = 171.0
+text = "Gambang"
+
+[connection signal="pressed" from="BtnBack" to="BtnBack" method="_on_BtnBack_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_BtnBatik_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_BtnStupa_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_BtnGong_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_BtnGambang_pressed"]

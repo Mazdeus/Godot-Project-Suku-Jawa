@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6gy4hmjk0jd1"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/About.cs" id="1_hsgrb"]
+[ext_resource type="Texture2D" uid="uid://bevkw7so00xb3" path="res://Assets/backgound1.jpg" id="2_ovdka"]
+[ext_resource type="Texture2D" uid="uid://bvuvofyctjicy" path="res://Assets/About1.png" id="3_eike0"]
+[ext_resource type="Texture2D" uid="uid://bssa042stwwo5" path="res://Assets/About2.png" id="4_tc7cv"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hsgrb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ovdka")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnBack" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[node name="About1" type="Sprite2D" parent="."]
+position = Vector2(205, 212)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_eike0")
+
+[node name="About2" type="Sprite2D" parent="."]
+position = Vector2(511, 274)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_tc7cv")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BtnBack" to="." method="_on_BtnBack_pressed"]
